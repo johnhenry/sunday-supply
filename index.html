@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunday Supply — office coffee, simply done</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
+      :root { --paper:#f6f2ec; --ink:#26342d; --olive:#68755a; --cream:#fffdfa; --line:#d9d5cd; --orange:#dc7755; }
+      * { box-sizing:border-box; }
+      body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; }
+      .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
+      header { display:flex; align-items:center; justify-content:space-between; padding:27px 0; border-bottom:1px solid var(--line); }
+      .brand { font-weight:700; letter-spacing:-.06em; font-size:1.25rem; }
+      .brand span { font-family:"Playfair Display",serif; font-style:italic; font-weight:600; }
+      nav { display:flex; gap:26px; color:#536056; font-size:.9rem; }
+      .status { font-size:.76rem; border:1px solid var(--line); background:var(--cream); padding:8px 11px; border-radius:20px; }
+      .status i { display:inline-block; width:7px; height:7px; background:#75a46a; border-radius:50%; margin-right:6px; }
+      .hero { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; padding:90px 0 78px; }
+      .kicker { color:var(--olive); text-transform:uppercase; letter-spacing:.14em; font-size:.72rem; font-weight:700; }
+      h1 { margin:16px 0 19px; font:700 clamp(3.2rem,6vw,5.6rem)/.95 "Playfair Display",serif; letter-spacing:-.07em; }
+      h1 em { color:var(--orange); }
+      .lede { max-width:480px; color:#637066; line-height:1.65; font-size:1.03rem; }
+      .button { display:inline-block; margin-top:24px; padding:13px 19px; border-radius:7px; background:var(--ink); color:white; font-size:.88rem; font-weight:600; }
+      .photo { aspect-ratio:4/4.2; border-radius:150px 150px 18px 18px; background:linear-gradient(150deg,#d8b9a0 0 45%,#8d9d75 45% 62%,#e5d6c5 62%); position:relative; overflow:hidden; }
+      .photo::before { content:""; position:absolute; width:68%; aspect-ratio:1; border-radius:50%; background:#e8c39b; left:18%; top:23%; box-shadow:0 0 0 22px rgba(255,253,250,.22); }
+      .photo::after { content:"FRESHLY\A ROASTED"; white-space:pre; position:absolute; inset:auto 22px 20px; padding:12px; background:rgba(255,253,250,.91); border-radius:5px; color:#3d5041; font:600 .73rem/1.45 "DM Sans",sans-serif; letter-spacing:.1em; text-align:center; }
+      .hours { margin-top:14px; color:#647067; font-size:.78rem; }
+      .section-head { display:flex; justify-content:space-between; align-items:end; padding-bottom:20px; border-bottom:1px solid var(--line); }
+      h2 { margin:6px 0 0; font:700 2rem "Playfair Display",serif; letter-spacing:-.05em; }
+      .menu { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:24px 0 78px; }
+      .card { min-height:225px; padding:21px; background:var(--cream); border:1px solid var(--line); border-radius:10px; display:flex; flex-direction:column; }
+      .tag { color:var(--orange); font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
+      .card h3 { margin:13px 0 8px; font-size:1.16rem; letter-spacing:-.04em; }
+      .card p { color:#6f786f; line-height:1.5; font-size:.88rem; margin:0; }
+      .price { margin-top:auto; padding-top:19px; font-size:.9rem; font-weight:700; }
+      .quote { margin:0 0 78px; padding:36px 7%; text-align:center; background:#e5e9dd; border-radius:12px; }
+      .stars { letter-spacing:.22em; color:var(--orange); font-size:1rem; }
+      blockquote { margin:13px auto 16px; max-width:650px; font:600 1.68rem/1.3 "Playfair Display",serif; letter-spacing:-.04em; }
+      cite { color:#68746a; font-size:.8rem; font-style:normal; }
+      footer { display:flex; justify-content:space-between; border-top:1px solid var(--line); padding:23px 0 40px; color:#788078; font-size:.78rem; }
+      @media (max-width:720px) { .hero,.menu { grid-template-columns:1fr; } .hero { gap:35px; padding:62px 0; } nav { display:none; } .photo { max-width:430px; } .section-head { display:block; } .section-head .hours { margin-top:12px; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">sunday <span>supply</span></div>
+        <nav><span>Office coffee</span><span>How it works</span><span>Our beans</span></nav>
+        <div class="status"><i></i>Taking new offices</div>
+      </header>
+      <main>
+        <section class="hero">
+          <div>
+            <p class="kicker">Better mornings at work</p>
+            <!-- BUG 1: The main headline has two glaring misspellings. -->
+            <h1>Good <strong>cofee</strong>, <em>at your deks.</em></h1>
+            <p class="lede">We keep small teams supplied with freshly roasted coffee, practical brewing gear, and the occasional pastry-shaped morale boost.</p>
+            <span class="button">See office plans</span>
+          </div>
+          <div>
+            <div class="photo" aria-label="A warm coffee counter with a Sunday sign"></div>
+            <p class="hours">Open Monday–Friday, 7:00 AM–6:00 PM · Oakland, CA</p>
+          </div>
+        </section>
+        <section>
+          <div class="section-head"><div><p class="kicker">Choose a rhythm</p><h2>Simple plans for real offices.</h2></div><p class="hours">No contracts. Pause any month.</p></div>
+          <div class="menu">
+            <article class="card"><span class="tag">For 5–12 people</span><h3>The Studio</h3><p>Two rotating coffees, filters, oat milk, and a tidy monthly delivery.</p><div class="price">$120 / month</div></article>
+            <article class="card"><span class="tag">For 12–30 people</span><h3>The Floor</h3><p>A generous coffee rotation, a grinder rental, and a friendly brew guide.</p><div class="price">$240 / month</div></article>
+            <article class="card"><span class="tag">For 30–60 people</span><h3>The Whole Crew</h3><p>Everything above, plus a quarterly tasting and emergency decaf.</p><!-- BUG 2: This price has one accidental extra zero. --><div class="price">$3,600 / month</div></article>
+          </div>
+        </section>
+        <section class="quote">
+          <!-- BUG 3: The testimonial displays seven stars instead of a normal five-star rating. -->
+          <div class="stars" aria-label="7 out of 5 stars">★★★★★★★</div>
+          <blockquote>“The coffee is excellent, the deliveries are quiet, and somehow our Monday meetings got less tragic.”</blockquote>
+          <cite>— Mira Chen, Paper Plane Studio</cite>
+        </section>
+      </main>
+      <footer><span>© Sunday Supply Co.</span><span>hello@sundaysupply.example · Oakland, California</span></footer>
+    </div>
+  </body>
+</html>
