@@ -48,6 +48,10 @@
       section { scroll-margin-top:24px; }
       footer { flex-wrap:wrap; gap:12px; }
       @media (max-width:720px) { header { flex-wrap:wrap; gap:16px; } nav { display:flex; order:3; flex-basis:100%; flex-wrap:wrap; gap:18px; } nav a { padding:8px 0; } }
+      #plan-finder { margin-top:24px; padding:24px; background:var(--cream); border:1px solid var(--line); border-radius:10px; }
+      #plan-finder input { display:block; max-width:100%; width:12rem; padding:12px; font:inherit; }
+      #plan-finder button { border:0; cursor:pointer; font-family:inherit; }
+      #team-help, #plan-result { line-height:1.5; }
     </style>
   </head>
   <body>
@@ -73,6 +77,14 @@
         </section>
         <section id="plans">
           <div class="section-head"><div><p class="kicker">Choose a rhythm</p><h2>Simple plans for real offices.</h2></div><p class="hours">No contracts. Pause any month.</p></div>
+          <form id="plan-finder" hidden>
+            <h3>Find plans for your team</h3>
+            <label for="team-size">How many people are in your team?</label>
+            <p id="team-help">Enter a whole number. Teams of 12 or 30 can compare two matching plans.</p>
+            <input id="team-size" name="team-size" type="number" min="1" step="1" max="9007199254740991" required aria-describedby="team-help" />
+            <button class="button" type="submit">Compare plans</button>
+            <p id="plan-result" role="status" aria-live="polite" aria-atomic="true"></p>
+          </form>
           <div class="menu">
             <article class="card"><span class="tag">For 5–12 people</span><h3>The Studio</h3><p>Two rotating coffees, filters, oat milk, and a tidy monthly delivery.</p><div class="price">$120 / month</div></article>
             <article class="card"><span class="tag">For 12–30 people</span><h3>The Floor</h3><p>A generous coffee rotation, a grinder rental, and a friendly brew guide.</p><div class="price">$240 / month</div></article>
@@ -87,5 +99,6 @@
       </main>
       <footer><span>© Sunday Supply Co.</span><span>hello@sundaysupply.example · Oakland, California</span></footer>
     </div>
+    <script type="module" src="./plan-finder.mjs"></script>
   </body>
 </html>
