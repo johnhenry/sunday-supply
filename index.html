@@ -52,6 +52,10 @@
       #plan-finder input { display:block; max-width:100%; width:12rem; padding:12px; font:inherit; }
       #plan-finder button { border:0; cursor:pointer; font-family:inherit; }
       #team-help, #plan-result { line-height:1.5; }
+      #questions { margin-bottom:64px; }
+      details { border-bottom:1px solid var(--line); padding:18px 0; }
+      summary { cursor:pointer; font-weight:600; padding:6px 0; }
+      details p { max-width:65ch; line-height:1.6; }
     </style>
   </head>
   <body>
@@ -95,6 +99,12 @@
           <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
           <blockquote>“The coffee is excellent, the deliveries are quiet, and somehow our Monday meetings got less tragic.”</blockquote>
           <cite>— Mira Chen, Paper Plane Studio</cite>
+        </section>
+        <section id="questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">A few useful answers</h2>
+          <details><summary>Can we pause our plan?</summary><p>There are no contracts. You can pause any month.</p></details>
+          <details><summary>Why do two plans match our team?</summary><p>The listed ranges overlap at 12 and 30 people. Compare the supplies included in each plan; team size alone does not determine your coffee needs.</p></details>
+          <details><summary>Does comparing plans place an order?</summary><p>No. This tool compares the published monthly plans only. It does not place an order or collect your information.</p></details>
         </section>
       </main>
       <footer><span>© Sunday Supply Co.</span><span>hello@sundaysupply.example · Oakland, California</span></footer>
