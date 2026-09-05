@@ -40,29 +40,38 @@
       cite { color:#68746a; font-size:.8rem; font-style:normal; }
       footer { display:flex; justify-content:space-between; border-top:1px solid var(--line); padding:23px 0 40px; color:#788078; font-size:.78rem; }
       @media (max-width:720px) { .hero,.menu { grid-template-columns:1fr; } .hero { gap:35px; padding:62px 0; } nav { display:none; } .photo { max-width:430px; } .section-head { display:block; } .section-head .hours { margin-top:12px; } }
+      a { color:inherit; text-underline-offset:.2em; }
+      .button { text-decoration:none; }
+      a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline:3px solid #9b452b; outline-offset:4px; }
+      .skip-link { position:absolute; left:20px; top:-100px; padding:12px; background:var(--cream); z-index:2; }
+      .skip-link:focus { top:12px; }
+      section { scroll-margin-top:24px; }
+      footer { flex-wrap:wrap; gap:12px; }
+      @media (max-width:720px) { header { flex-wrap:wrap; gap:16px; } nav { display:flex; order:3; flex-basis:100%; flex-wrap:wrap; gap:18px; } nav a { padding:8px 0; } }
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="wrap">
       <header>
         <div class="brand">sunday <span>supply</span></div>
-        <nav><span>Office coffee</span><span>How it works</span><span>Our beans</span></nav>
+        <nav aria-label="Main navigation"><a href="#plans">Office plans</a><a href="#testimonial">Customer story</a></nav>
         <div class="status"><i></i>Taking new offices</div>
       </header>
-      <main>
+      <main id="content" tabindex="-1">
         <section class="hero">
           <div>
             <p class="kicker">Better mornings at work</p>
             <h1>Good <strong>coffee</strong>, <em>at your desk.</em></h1>
             <p class="lede">We keep small teams supplied with freshly roasted coffee, practical brewing gear, and the occasional pastry-shaped morale boost.</p>
-            <span class="button">See office plans</span>
+            <a class="button" href="#plans">See office plans</a>
           </div>
           <div>
-            <div class="photo" aria-label="A warm coffee counter with a Sunday sign"></div>
+            <div class="photo" aria-hidden="true"></div>
             <p class="hours">Open Monday–Friday, 7:00 AM–6:00 PM · Oakland, CA</p>
           </div>
         </section>
-        <section>
+        <section id="plans">
           <div class="section-head"><div><p class="kicker">Choose a rhythm</p><h2>Simple plans for real offices.</h2></div><p class="hours">No contracts. Pause any month.</p></div>
           <div class="menu">
             <article class="card"><span class="tag">For 5–12 people</span><h3>The Studio</h3><p>Two rotating coffees, filters, oat milk, and a tidy monthly delivery.</p><div class="price">$120 / month</div></article>
@@ -70,7 +79,7 @@
             <article class="card"><span class="tag">For 30–60 people</span><h3>The Whole Crew</h3><p>Everything above, plus a quarterly tasting and emergency decaf.</p><div class="price">$360 / month</div></article>
           </div>
         </section>
-        <section class="quote">
+        <section class="quote" id="testimonial">
           <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
           <blockquote>“The coffee is excellent, the deliveries are quiet, and somehow our Monday meetings got less tragic.”</blockquote>
           <cite>— Mira Chen, Paper Plane Studio</cite>
